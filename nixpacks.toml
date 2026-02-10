@@ -1,0 +1,9 @@
+[phases.setup]
+
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
+
+[phases.build]
+
+[start]
+cmd = "python app.py"

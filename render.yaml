@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: streamflow-proxy-fast
+    runtime: docker
+    region: frankfurt  # oregon, frankfurt, singapore
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: GEVENT_RESOLVER
+        value: ares
+    healthCheckPath: /health
+    autoDeploy: true
